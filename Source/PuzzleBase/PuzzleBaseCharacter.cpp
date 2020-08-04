@@ -8,6 +8,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Engine/World.h"
 
 //////////////////////////////////////////////////////////////////////////
 // APuzzleBaseCharacter
@@ -76,6 +77,12 @@ void APuzzleBaseCharacter::SetupPlayerInputComponent(class UInputComponent* Play
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &APuzzleBaseCharacter::OnResetVR);
 }
 
+
+float APuzzleBaseCharacter::GetTime()
+{
+	UWorld* World = GetWorld();
+	return World->RealTimeSeconds;
+}
 
 void APuzzleBaseCharacter::OnResetVR()
 {
