@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+
 #include "PuzzleBaseCharacter.generated.h"
 
 UCLASS(config=Game)
@@ -28,6 +29,9 @@ public:
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
+
+	UFUNCTION(BlueprintCallable, Category = "Testing")
+	float GetTime();
 
 protected:
 
